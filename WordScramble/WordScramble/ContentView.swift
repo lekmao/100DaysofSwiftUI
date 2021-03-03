@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var usedWords: [String] = []
+    @State private var rootWord: String = ""
+    @State private var newWord: String = ""
+    
     var body: some View {
-        List(0..<55) { number in
-            Text("\(number)")
+        NavigationView {
+            VStack {
+                TextField("Enter your word", text: $newWord)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                List(usedWords, id: \.self) { usedWord in
+                    Text("\(usedWord)")
+                }
+            }
+            .navigationBarTitle(rootWord)
         }
     }
 }

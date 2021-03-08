@@ -11,6 +11,7 @@
 		9C1EAE7C25E8AD6900A61922 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EAE7B25E8AD6900A61922 /* ContentView.swift */; };
 		9C1EAE7E25E8AD6A00A61922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1EAE7D25E8AD6A00A61922 /* Assets.xcassets */; };
 		9C1EAE8125E8AD6A00A61922 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1EAE8025E8AD6A00A61922 /* Preview Assets.xcassets */; };
+		9C33177D25F669A7004B3E84 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C33177C25F669A7004B3E84 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		9C1EAE7D25E8AD6A00A61922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C1EAE8025E8AD6A00A61922 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C1EAE8225E8AD6A00A61922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C33177C25F669A7004B3E84 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "../../_resource/HackingWithSwift-main/SwiftUI/project5-files/start.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				9C1EAE7B25E8AD6900A61922 /* ContentView.swift */,
 				9C1EAE7D25E8AD6A00A61922 /* Assets.xcassets */,
 				9C1EAE8225E8AD6A00A61922 /* Info.plist */,
+				9C33177C25F669A7004B3E84 /* start.txt */,
 				9C1EAE7F25E8AD6A00A61922 /* Preview Content */,
 			);
 			path = WordScramble;
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1EAE8125E8AD6A00A61922 /* Preview Assets.xcassets in Resources */,
+				9C33177D25F669A7004B3E84 /* start.txt in Resources */,
 				9C1EAE7E25E8AD6A00A61922 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

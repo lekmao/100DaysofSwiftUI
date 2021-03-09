@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @State private var usedWords: [String] = []
@@ -43,6 +44,26 @@ struct ContentView: View {
         
         // if the above statement does not exit, this runs
         fatalError("Could not load start.txt from bundle.")
+    }
+    
+    // check if the word had not been used
+    func isOriginal(word: String) -> Bool {
+        !usedWords.contains(word)
+    }
+    
+    // check if it's possible to spell a newWord from the rootWord
+    func isPossible(word: String) -> Bool {
+        var tempWord = rootWord
+        
+        for letter in word {
+            if let position = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        
+        return true
     }
     
     var body: some View {

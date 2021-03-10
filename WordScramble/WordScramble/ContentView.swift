@@ -12,12 +12,14 @@ struct ContentView: View {
     @State private var usedWords: [String] = []
     @State private var rootWord: String = ""
     @State private var newWord: String = ""
-    
+    @State private var scoreCount: Int = 0
     
     // alert properties
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    
+    @State private var allWords: [String] = []
 
     
     func addNewWord() {
@@ -44,6 +46,17 @@ struct ContentView: View {
             return
         }
         
+        guard isNotRootWord(word: answer) else {
+            wordError(title: "Catch you!", message: "Sorry, you cannot use the same root word!")
+            return
+        }
+        
+        guard isNotOneWord(word: answer) else {
+            wordError(title: "No, no, no!", message: "You cannot just write one word and call it a day!")
+            return
+        }
+        
+        scoreCount += answer.count
         usedWords.insert(answer, at: 0)
         newWord = ""
     }
@@ -54,7 +67,7 @@ struct ContentView: View {
             // load start.txt into a string
             if let startWords = try? String(contentsOf: startWordsURL) {
                 // split string into an array of strings using line breaks
-                let allWords = startWords.components(separatedBy: "\n")
+                allWords = startWords.components(separatedBy: "\n")
                 
                 // pick one random word, or use "silkworm" as a default word
                 rootWord = allWords.randomElement() ?? "silkworm"
@@ -62,6 +75,7 @@ struct ContentView: View {
                 // if all goes well, this is the method exit
                 return
             }
+            
         }
         
         // if the above statement does not exit, this runs
@@ -84,7 +98,6 @@ struct ContentView: View {
                 return false
             }
         }
-        
         return true
     }
     
@@ -97,11 +110,51 @@ struct ContentView: View {
         return misspelledRange.location == NSNotFound
     }
     
+    // check if the word is the same as the rootWord
+    func isNotRootWord(word: String) -> Bool {
+        word != rootWord
+    }
+    
+    // check if the word is just one word
+    func isNotOneWord(word: String) -> Bool {
+        word.count > 1
+    }
+    
     // setting up error alert
     func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    // restart game
+    func restartGame() {
+        startGame()
+        newWord = ""
+        scoreCount = 0
+        usedWords = []
+    }
+    
+    
+    // remove word
+    func removeWord() {
+        var removeWord = ""
+        if let position = allWords.firstIndex(of: rootWord) {
+            removeWord = allWords.remove(at: position)
+        }
+        
+        print("removed word is: \(removeWord)")
+    }
+    
+    
+    // get a another word
+    func getAnotherWord() {
+        removeWord()
+        print("previous rootWord is: \(rootWord)")
+        
+        rootWord = allWords.randomElement()!
+        newWord = ""
+        usedWords = []
     }
     
     var body: some View {
@@ -112,6 +165,8 @@ struct ContentView: View {
                     .autocapitalization(.none)
                     .padding()
                 
+                Text("Score: \(scoreCount)")
+                
                 List(usedWords, id: \.self) { usedWord in
                     Image(systemName: "\(usedWord.count).circle")
                     Text("\(usedWord)")
@@ -121,6 +176,18 @@ struct ContentView: View {
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: restartGame) {
+                        Text("Restart")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: getAnotherWord) {
+                        Text("Next Word")
+                    }
+                }
             }
         }
     }

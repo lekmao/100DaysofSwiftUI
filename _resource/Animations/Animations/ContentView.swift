@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var animationAmount: Double = 0.0
+    let letters = Array("Hello SwifUI")
+    @State private var enabled = false
+    @State private var dragAmount = CGSize.zero
     
     var body: some View {
-        Button("Tap Here") {
-            withAnimation(.interpolatingSpring(stiffness: 10, damping: 1)) {
-                self.animationAmount += 360
+        HStack(spacing: 0) {
+            ForEach(0..<letters.count) { num in
+                Text(String(self.letters[num]))
+                    .padding(5)
+                    .font(.title)
+                    .background(self.enabled ? Color.blue : Color.red)
+                    .offset(dragAmount)
+                    .animation(
+                        Animation.default
+                            .delay(Double(num) / 20)
+                    )
             }
+            .gesture(
+                DragGesture()
+                    .onChanged { newPosition in self.dragAmount = newPosition.translation}
+                    .onEnded { _ in
+                        self.dragAmount = .zero
+                        self.enabled.toggle()
+                    }
+            )
         }
-        .padding(50)
-        .background(Color.red)
-        . foregroundColor(.white)
-        .clipShape(Circle())
-        .rotation3DEffect(
-            .degrees(animationAmount),
-            axis: (x: 1.0, y: 0.0, z: 0.0)
-        )
         
     }
 }
@@ -33,3 +43,17 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//LinearGradient(gradient: Gradient(colors: [.green, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//    .frame(width: 300, height: 200)
+//    .clipShape(RoundedRectangle(cornerRadius: 13.0))
+//    .offset(dragAmount)
+//    .gesture(
+//        DragGesture()
+//            .onChanged { newPosition in self.dragAmount = newPosition.translation}
+//            .onEnded { _ in
+//                withAnimation(.interpolatingSpring(stiffness: 50, damping: 10)) {
+//                    self.dragAmount = .zero
+//                }
+//            }
+//    )

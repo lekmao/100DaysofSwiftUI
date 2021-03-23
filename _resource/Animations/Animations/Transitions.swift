@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  Transitions.swift
 //  Animations
 //
-//  Created by Lékan Mabayoje on 3/10/21.
+//  Created by Lékan Mabayoje on 3/23/21.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct Transitions: View {
     @State private var isShowingRed = false
     
     var body: some View {
@@ -27,8 +27,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Transitions_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Transitions()
     }
 }

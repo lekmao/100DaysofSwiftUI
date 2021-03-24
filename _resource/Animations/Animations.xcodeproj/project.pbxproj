@@ -11,6 +11,9 @@
 		9C33178E25F9571C004B3E84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33178D25F9571C004B3E84 /* ContentView.swift */; };
 		9C33179025F9571F004B3E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C33178F25F9571F004B3E84 /* Assets.xcassets */; };
 		9C33179325F9571F004B3E84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C33179225F9571F004B3E84 /* Preview Assets.xcassets */; };
+		9C36FA47260A195300A2B2C3 /* GestureAnimationTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C36FA46260A195300A2B2C3 /* GestureAnimationTwo.swift */; };
+		9C36FA4A260A19C100A2B2C3 /* GestureAnimationOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C36FA49260A19C100A2B2C3 /* GestureAnimationOne.swift */; };
+		9CA1F214260A237600D09CB9 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1F213260A237600D09CB9 /* Transitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		9C33178F25F9571F004B3E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C33179225F9571F004B3E84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C33179425F9571F004B3E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C36FA46260A195300A2B2C3 /* GestureAnimationTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureAnimationTwo.swift; sourceTree = "<group>"; };
+		9C36FA49260A19C100A2B2C3 /* GestureAnimationOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureAnimationOne.swift; sourceTree = "<group>"; };
+		9CA1F213260A237600D09CB9 /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				9C33178B25F9571C004B3E84 /* AnimationsApp.swift */,
 				9C33178D25F9571C004B3E84 /* ContentView.swift */,
+				9CA1F213260A237600D09CB9 /* Transitions.swift */,
+				9C36FA49260A19C100A2B2C3 /* GestureAnimationOne.swift */,
+				9C36FA46260A195300A2B2C3 /* GestureAnimationTwo.swift */,
 				9C33178F25F9571F004B3E84 /* Assets.xcassets */,
 				9C33179425F9571F004B3E84 /* Info.plist */,
 				9C33179125F9571F004B3E84 /* Preview Content */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C33178E25F9571C004B3E84 /* ContentView.swift in Sources */,
+				9CA1F214260A237600D09CB9 /* Transitions.swift in Sources */,
+				9C36FA4A260A19C100A2B2C3 /* GestureAnimationOne.swift in Sources */,
+				9C36FA47260A195300A2B2C3 /* GestureAnimationTwo.swift in Sources */,
 				9C33178C25F9571C004B3E84 /* AnimationsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

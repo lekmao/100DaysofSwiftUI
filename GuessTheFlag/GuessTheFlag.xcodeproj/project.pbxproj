@@ -11,6 +11,7 @@
 		9C1FB10325CF4A2100F80984 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1FB10225CF4A2100F80984 /* ContentView.swift */; };
 		9C1FB10525CF4A2200F80984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1FB10425CF4A2200F80984 /* Assets.xcassets */; };
 		9C1FB10825CF4A2200F80984 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1FB10725CF4A2200F80984 /* Preview Assets.xcassets */; };
+		9CA1F218260B6BFE00D09CB9 /* OriginalGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1F217260B6BFE00D09CB9 /* OriginalGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		9C1FB10425CF4A2200F80984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C1FB10725CF4A2200F80984 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C1FB10925CF4A2200F80984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA1F217260B6BFE00D09CB9 /* OriginalGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				9C1FB10025CF4A2100F80984 /* GuessTheFlagApp.swift */,
 				9C1FB10225CF4A2100F80984 /* ContentView.swift */,
+				9CA1F217260B6BFE00D09CB9 /* OriginalGame.swift */,
 				9C1FB10425CF4A2200F80984 /* Assets.xcassets */,
 				9C1FB10925CF4A2200F80984 /* Info.plist */,
 				9C1FB10625CF4A2200F80984 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				9C1FB10325CF4A2100F80984 /* ContentView.swift in Sources */,
 				9C1FB10125CF4A2100F80984 /* GuessTheFlagApp.swift in Sources */,
+				9CA1F218260B6BFE00D09CB9 /* OriginalGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

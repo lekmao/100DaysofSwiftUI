@@ -15,13 +15,13 @@ import SwiftUI
 // Create game settings view
 struct SettingsView: View {
     let multiplierRange: ClosedRange<Int>
-    @State var multiplierSelection: Int
+    let multiplierSelection: Binding<Int>
     
     let difficultyLevels: [String]
-    @State var difficultySelection: Int
+    let difficultySelection: Binding<Int>
     
     let numberOfQuestions: [Int]
-    @State var numberofQuestionsSelection: Int
+    let numberofQuestionsSelection: Binding<Int>
     
     let action: () -> Void
     
@@ -30,7 +30,7 @@ struct SettingsView: View {
             
             Form {
                 Section(header: Text("Select multiplications table")) {
-                    Picker("Multiplications", selection: $multiplierSelection) {
+                    Picker("Multiplications", selection: multiplierSelection) {
                         ForEach(multiplierRange, id: \.self) { number in
                             Text("\(number)")
                         }
@@ -38,7 +38,7 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Select difficilty level")) {
-                    Picker("Difficulty", selection: $difficultySelection) {
+                    Picker("Difficulty", selection: difficultySelection) {
                         ForEach(0..<difficultyLevels.count) { level in
                             Text("\(self.difficultyLevels[level])")
                         }
@@ -47,7 +47,7 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Select number of questions to answer")) {
-                    Picker("Questions", selection: $numberofQuestionsSelection) {
+                    Picker("Questions", selection: numberofQuestionsSelection) {
                         ForEach(0..<numberOfQuestions.count) { number in
                             Text("\(self.numberOfQuestions[number])")
                         }
@@ -58,12 +58,14 @@ struct SettingsView: View {
             .frame(height: 300)
             Button(action: action) {
                 Text("Start game")
+                    .font(.body)
+                    .frame(maxWidth: .infinity, maxHeight: 48)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(6)
+                    .padding()
             }
-//            .padding(0)
-            .frame(width: 295, height: 48 )
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(6)
+            
             Spacer()
             
         }
@@ -84,18 +86,34 @@ struct ContentView: View {
     
     let multiplicandRange: [ClosedRange<Int>] = [1...10, 11...20, 21...50]
     
+    @State private var startGame: Bool = false
+    
     var body: some View {
         NavigationView {
             Group {
-                SettingsView(
-                    multiplierRange: multiplierRange,
-                    multiplierSelection: multiplierSelection,
-                    difficultyLevels: difficultyLevels,
-                    difficultySelection: difficultySelection,
-                    numberOfQuestions: numberOfQuestions,
-                    numberofQuestionsSelection: numberofQuestionsSelection,
-                    action: {}
-                )
+                if startGame == false {
+                    SettingsView(
+                        multiplierRange: multiplierRange,
+                        multiplierSelection: $multiplierSelection,
+                        difficultyLevels: difficultyLevels,
+                        difficultySelection: $difficultySelection,
+                        numberOfQuestions: numberOfQuestions,
+                        numberofQuestionsSelection: $numberofQuestionsSelection,
+                        action: {
+                            print("Hello")
+                            startGame = true
+                            print(startGame)
+                            print("Difficulty is: \(difficultyLevels[difficultySelection])")
+                        }
+                    )
+                } else {
+                    VStack {
+                        Text("Game has started!")
+                        Text("Multiplier is: \(multiplierSelection)")
+                        Text("Difficulty is: \(difficultyLevels[difficultySelection])")
+                        Text("Questions are: \(numberOfQuestions[numberofQuestionsSelection])")
+                    }
+                }
             }
             .navigationTitle("Times Tables")
         }

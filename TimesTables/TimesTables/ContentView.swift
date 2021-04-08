@@ -72,6 +72,29 @@ struct SettingsView: View {
     }
 }
 
+// Create game play view
+struct GamePlay: View {
+    @State private var userAnswer: String = ""
+    
+    var body: some View {
+        VStack {
+            VStack {
+                Text("What is the product of ")
+                HStack {
+                    Text("\(5)")
+                    Text("x")
+                    Text("\(10)")
+                }
+            }
+            Text("Answer here")
+            
+            TextField("Enter answer here", text: $userAnswer)
+                .padding()
+            Spacer()
+        }
+    }
+}
+
 
 struct ContentView: View {
     
@@ -85,13 +108,16 @@ struct ContentView: View {
     @State private var numberofQuestionsSelection: Int = 0
     
     let multiplicandRange: [ClosedRange<Int>] = [1...10, 11...20, 21...50]
-    
-    @State private var startGame: Bool = false
+    var multiplicand: Int {
+        randomMultiplicand()
+    }
+    @State private var gameStettings: Bool = false
+    @State private var startGame: Bool = true
     
     var body: some View {
         NavigationView {
             Group {
-                if startGame == false {
+                if gameStettings == true {
                     SettingsView(
                         multiplierRange: multiplierRange,
                         multiplierSelection: $multiplierSelection,
@@ -101,22 +127,30 @@ struct ContentView: View {
                         numberofQuestionsSelection: $numberofQuestionsSelection,
                         action: {
                             print("Hello")
+                            gameStettings = false
                             startGame = true
                             print(startGame)
                             print("Difficulty is: \(difficultyLevels[difficultySelection])")
                         }
                     )
-                } else {
-                    VStack {
-                        Text("Game has started!")
-                        Text("Multiplier is: \(multiplierSelection)")
-                        Text("Difficulty is: \(difficultyLevels[difficultySelection])")
-                        Text("Questions are: \(numberOfQuestions[numberofQuestionsSelection])")
-                    }
+                } else if startGame == true {
+                    //                    VStack {
+                    //                        Text("Game has started!")
+                    //                        Text("Multiplier is: \(multiplierSelection)")
+                    //                        Text("Difficulty is: \(difficultyLevels[difficultySelection])")
+                    //                        Text("Questions are: \(numberOfQuestions[numberofQuestionsSelection])")
+                    //                        Text("Multiplicand is: \(multiplicand)")
+                    //                    }
+                    GamePlay()
                 }
             }
             .navigationTitle("Times Tables")
         }
+    }
+    
+    // Generate a random number from an array of ranges based on difficulty level
+    func randomMultiplicand() -> Int {
+        Int.random(in: multiplicandRange[difficultySelection])
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C35EA3C26575917001182D0 /* ShowHideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35EA3B26575917001182D0 /* ShowHideView.swift */; };
+		9C35EA3F26575F68001182D0 /* OnDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35EA3E26575F68001182D0 /* OnDelete.swift */; };
+		9C35EA4626576307001182D0 /* UserDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35EA4526576307001182D0 /* UserDefaultSettings.swift */; };
 		9C6DADCD264D1D3F003FDA6E /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DADCC264D1D3F003FDA6E /* iExpenseApp.swift */; };
 		9C6DADCF264D1D3F003FDA6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DADCE264D1D3F003FDA6E /* ContentView.swift */; };
 		9C6DADD1264D1D40003FDA6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6DADD0264D1D40003FDA6E /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C35EA3B26575917001182D0 /* ShowHideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHideView.swift; sourceTree = "<group>"; };
+		9C35EA3E26575F68001182D0 /* OnDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDelete.swift; sourceTree = "<group>"; };
+		9C35EA4526576307001182D0 /* UserDefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSettings.swift; sourceTree = "<group>"; };
 		9C6DADC9264D1D3F003FDA6E /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6DADCC264D1D3F003FDA6E /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		9C6DADCE264D1D3F003FDA6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 			children = (
 				9C6DADCC264D1D3F003FDA6E /* iExpenseApp.swift */,
 				9C6DADCE264D1D3F003FDA6E /* ContentView.swift */,
+				9C35EA4526576307001182D0 /* UserDefaultSettings.swift */,
+				9C35EA3E26575F68001182D0 /* OnDelete.swift */,
+				9C35EA3B26575917001182D0 /* ShowHideView.swift */,
 				9C6DADD0264D1D40003FDA6E /* Assets.xcassets */,
 				9C6DADD5264D1D40003FDA6E /* Info.plist */,
 				9C6DADD2264D1D40003FDA6E /* Preview Content */,
@@ -138,6 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C35EA4626576307001182D0 /* UserDefaultSettings.swift in Sources */,
+				9C35EA3C26575917001182D0 /* ShowHideView.swift in Sources */,
+				9C35EA3F26575F68001182D0 /* OnDelete.swift in Sources */,
 				9C6DADCF264D1D3F003FDA6E /* ContentView.swift in Sources */,
 				9C6DADCD264D1D3F003FDA6E /* iExpenseApp.swift in Sources */,
 			);
